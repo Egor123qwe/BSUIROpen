@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+    <link rel="stylesheet" href="FontStyle/oswald.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://www.google.com/recaptcha/api.js"></script>
+</head>
+<body class="background-white background-star">
+    <header class="d-flex align-center">
+        <div class="container">
+            <nav class="d-flex justify-end p-justify-start align-center">
+                <button class="burger-button"></button>
+                <p class="language"><a href="#">EN</a></p>
+                <ul class="nav-menu d-flex justify-end align-center">
+                    <li class="nav-menu-element"><a href="#">Главная</a></li>
+                    <li class="nav-menu-element"><a href="#">Об олимпиаде</a></li>
+                    <li class="nav-menu-element"><a href="#">Правила</a></li>
+                    <li class="nav-menu-element nav-mobile"><a href="#">Этапы</a></li>
+                    <li class="nav-menu-element nav-mobile"><a href="#">Расписание</a></li>
+                    <li class="nav-menu-element nav-mobile"><a href="#">Архив</a></li>
+                    <li class="nav-menu-element nav-mobile"><a href="#">Правила</a></li>
+                    <li class="nav-menu-element nav-mobile"><a href="#">Спонсоры</a></li>
+                    <li class="nav-menu-element nav-mobile"><a href="#">Контакты</a></li>
+                </ul>
+                <div class="account-wrap d-flex justify-end align-center">
+                    <p class="nav-menu-element"><a href="#">Участвовать</a></p>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <main class="spaced-letters">
+        <div class="container d-flex justify-between align-center">
+            <div class="logo-wrap">
+                <img class="logo" src="Images/MainLogo.svg" alt="Logo">
+                <p class="slogan">Open programming championship<br/>for scholars and students</p>
+            </div>
+            <div class="form-wrap">
+                <h3>Регистрация</h3>
+                <form class="d-flex flex-column align-center justify-center" action="#">
+                    <input type="text" name="login" required placeholder="Имя пользователя">
+                    <input class="invalid-input" type="password" name="password1" required placeholder="Пароль">
+                    <input type="password" name="password2" required placeholder="Пароль повторно">
+                    <div class="g-recaptcha" data-sitekey="6LewMvEeAAAAAAIJBciffX_N7BTeiUlfLGu4lcbR"></div>
+                    <p class="error">Текст ошибки если не прошло валидацию</p>
+                    <button type="submit">Добавить</button>
+                </form>
+            </div>
+        </div>
+    </main>
+    <footer class="d-flex align-center">
+        <div class="container">
+            <ul class="footer-menu d-flex justify-end align-center">
+                <li class="footer-menu-element bsuir"><a href="https://www.bsuir.by"><img src="Images/bsuir.svg" alt="BSUIR"></a></li>
+                <li class="footer-menu-element fksis"><a href="https://fksis.bsuir.by"><img src="Images/miniFksis.svg" alt="FCSaN"></a></li>
+                <li class="footer-menu-element vk"><a href="https://vk.com/bsuiropen"><img src="Images/vk.svg" alt="VK"></a></li>
+            </ul>
+        </div>
+    </footer>
+    <script src="navbar.js"></script>
+</body>
+</html>

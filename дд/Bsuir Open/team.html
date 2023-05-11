@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team</title>
+    <link rel="stylesheet" href="FontStyle/oswald.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="background-white background-star">
+    <header class="d-flex align-center">
+        <div class="container">
+            <nav class="d-flex justify-end p-justify-start align-center">
+                <button class="burger-button"></button>
+                <p class="language"><a href="#">EN</a></p>
+                <ul class="nav-menu d-flex justify-end align-center">
+                    <li class="nav-menu-element"><a href="#">Главная</a></li>
+                    <li class="nav-menu-element"><a href="#">Об олимпиаде</a></li>
+                    <li class="nav-menu-element"><a href="#">Правила</a></li>
+                    <li class="nav-menu-element nav-mobile"><a href="#">Этапы</a></li>
+                    <li class="nav-menu-element nav-mobile"><a href="#">Расписание</a></li>
+                    <li class="nav-menu-element nav-mobile"><a href="#">Архив</a></li>
+                    <li class="nav-menu-element nav-mobile"><a href="#">Правила</a></li>
+                    <li class="nav-menu-element nav-mobile"><a href="#">Спонсоры</a></li>
+                    <li class="nav-menu-element nav-mobile"><a href="#">Контакты</a></li>
+                </ul>
+                <div class="account-wrap d-flex justify-end align-center">
+                    <p class="nav-menu-element"><a href="#">Участвовать</a></p>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <main class="spaced-letters without-footer color-blue">
+        <div class="container d-flex justify-between align-center">
+            <div class="logo-wrap">
+                <img class="logo" src="Images/MainLogo.svg" alt="Logo">
+                <p class="slogan">Open programming championship<br/>for scholars and students</p>
+            </div>
+            <div class="team-wrap d-flex flex-column align-end">
+                <h3 class="cool-name">
+                    <span class="cool-triangle left"><img src="Images/Triangle.svg"></span>
+                    Супер-крутое-Team-Name
+                    <span class="cool-triangle right"><img src="Images/Triangle.svg"></span>
+                </h3>
+                <table class="team-status-table">
+                    <thead>
+                        <tr>
+                            <td>Статус</td>
+                            <td>Заполняется</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Трек</td>
+                            <td>Junior-Voper</td>
+                        </tr>
+                        <tr>
+                            <td>Стадия участия</td>
+                            <td>Не допущена / обрабатывается к дальнейшему участию</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="team-structure">
+                    <p class="team-structure-head porder"><b>Тренер</b></p>
+                    <p class="team-structure-head"><b>Участники</b></p>
+                    <div class="card porder">
+                        <p class="card-name">Долинский Михаил Семёнович Тренер</p>
+                        <p class="card-phone">Тел.: 88005553535</p>
+                        <p class="card-email">E-mail: dolinskiy@tut.by</p>
+                        <a href="#" class="card-edit">Редактировать</a>
+                    </div>
+                    <div class="card">
+                        <p class="card-name">Долинский Михаил Семёнович</p>
+                        <p class="card-phone">Тел.: 88005553535</p>
+                        <p class="card-email">E-mail: dolinskiy@tut.by</p>
+                        <a href="#" class="card-edit">Редактировать</a>
+                    </div>
+                    <div class="space"></div>
+                    <div class="card">
+                        <p class="card-name">Долинский Михаил Семёнович</p>
+                        <p class="card-phone">Тел.: 88005553535</p>
+                        <p class="card-email">E-mail: dolinskiy@tut.by</p>
+                        <a href="#" class="card-edit">Редактировать</a>
+                    </div>
+                    <div class="space"></div>
+                    <div class="card">
+                        <p class="card-name">Долинский Михаил Семёнович</p>
+                        <p class="card-phone">Тел.: 88005553535</p>
+                        <p class="card-email">E-mail: dolinskiy@tut.by</p>
+                        <a href="#" class="card-edit">Редактировать</a>
+                    </div>
+                </div>
+                <a class="a-button" href="#">Отправить на рассмотрение</a>
+            </div>
+        </div>
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                document.querySelector("header").style.backgroundColor = "var(--color-white)";
+            })
+        </script>
+    </main>
+    <script src="navbar.js"></script>
+    <script>
+        const mobileWidth = 900;
+
+        let coolName = document.querySelector(".cool-name");
+        let coolTriangle = document.querySelector(".cool-triangle");
+
+        function fitCoolName() {
+            let triangleWidth = coolTriangle.offsetWidth;
+
+            if (window.outerWidth <= mobileWidth) {
+                coolName.style.marginRight = coolName.style.marginLeft = triangleWidth + "px";
+                coolName.style.width = `calc(100% - ${triangleWidth * 2}px)`;
+            }
+            else {
+                coolName.style.width = "unset";
+                coolName.style.marginLeft = 0;
+                coolName.style.marginRight = triangleWidth + "px";
+            }
+        }
+        
+        document.addEventListener("DOMContentLoaded", fitCoolName);
+        window.addEventListener("resize", fitCoolName);
+    </script>
+</body>
+</html>

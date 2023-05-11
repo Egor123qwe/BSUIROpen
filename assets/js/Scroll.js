@@ -1,13 +1,26 @@
 const body = document.querySelector("body");
 
-const section1 = document.querySelector(".main_page");
-const section2 = document.querySelector(".about_olimpiad");
-const section3 = document.querySelector(".stages");
-const section4 = document.querySelector(".schedule");
-
+//Кнопки и секции (общие на странице)
+const sectionsStyles = ["ShowItem", "HideItem"];
+const sections = 
+    [ document.querySelector(".main_page"), 
+      document.querySelector(".about_olimpiad"), 
+      document.querySelector(".stages"),  
+      document.querySelector(".schedule")
+    ];
 const nav_btns = document.getElementsByClassName("nav-button");
+const nav_btnsStyles = ["select_btn", "none_select_btn"];
 
-const sections = [section1, section2, section3, section4]
+//Кнопки и секции (у 3-ей секции)
+const subSectionsStyles = ["ShowItem_sec3", "HideItem_sec3"];
+const subSection = 
+    [ document.querySelector(".stages-section-1"), 
+      document.querySelector(".stages-section-2"), 
+      document.querySelector(".stages-section-3")
+    ];
+const section_menu_btns = document.getElementsByClassName("stages-menu-item");
+const section_menu_btnsStyles = ["stages-menu-selected", "stages-menu-no_selected"];
+
 
 const SCROLL_DELAY = 500;
 const MOUSE_MAX_DELTA = 300;
@@ -22,13 +35,13 @@ function ChangeClass(el, lastStyle, curStyle) {
     el.classList.add(curStyle);
 }
 
-function ChangeSection(section) {
-    for (let i = 0; i < 4; i++) {
-        ChangeClass(sections[i], "ShowItem", "HideItem");
-        ChangeClass(nav_btns[i], "select_btn", "none_select_btn");
+function ChangeSection(section, sections, btns, buttonsStyles, sectionStyles) {
+    for (let i = 0; i < sections.length; i++) {
+        ChangeClass(sections[i], sectionStyles[0], sectionStyles[1]);
+        ChangeClass(btns[i], buttonsStyles[0], buttonsStyles[1]);
     }
-    ChangeClass(sections[section], "HideItem", "ShowItem");
-    ChangeClass(nav_btns[section], "none_select_btn", "select_btn");
+    ChangeClass(sections[section], sectionStyles[1], sectionStyles[0]);
+    ChangeClass(btns[section], buttonsStyles[1], buttonsStyles[0]);
 }
 
 function updateFrame(section) {
@@ -38,7 +51,7 @@ function updateFrame(section) {
     else {
         ChangeClass(body, "yellow-background", "green-background");
     }
-    ChangeSection(section);
+    ChangeSection(section, sections, nav_btns, nav_btnsStyles, sectionsStyles);
 
 }
 
@@ -93,9 +106,14 @@ document.addEventListener("touchend", function (event) {
     setTimeout(() => isCanScroll = true, SCROLL_DELAY);
 });
 
-
 for (let i = 0; i < 4; i++) {
     nav_btns[i].onclick = function(e) {
         updateFrame(i);
+    }
+}
+
+for (let i = 0; i < 3; i++) {
+    section_menu_btns[i].onclick = function(e) {
+        ChangeSection(i, subSection, section_menu_btns, section_menu_btnsStyles, subSectionsStyles);
     }
 }

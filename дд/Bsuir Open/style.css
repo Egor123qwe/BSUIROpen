@@ -2338,10 +2338,6 @@ button {
     left: var(--container-padding);
 }
 
-.g-recaptcha {
-    margin: 10px 0;
-}
-
 .nav-mobile {
     display: none;
 }
@@ -2387,18 +2383,6 @@ button {
 
     .nav-menu.showed {
         left: 0;
-    }
-
-    .p-justify-start {
-        justify-content: flex-start;
-    }
-
-    .logo-wrap {
-        display: none;
-    }
-
-    .form-wrap, .team-wrap {
-        width: 100%;
     }
 
     .background-star {

@@ -264,7 +264,7 @@ section {
   right: 0;
   z-index: -1;
 }
-
+/*Section 1*/
 .main_page {
   padding: 30px var(--container-padding);
   color: var(--color-gray);
@@ -284,6 +284,8 @@ section {
   letter-spacing: 0.1em;
   text-align: center;
 }
+/*Section 1*/
+
 
 @media (max-width: 900px) {
   section {
@@ -294,10 +296,6 @@ section {
   }
   .nav {
     display: none;
-  }
-
-  header .container {
-    height: var(--header-footer-height + 20);
   }
 
   .language {
@@ -328,6 +326,7 @@ section {
   }
   .mobile-wrap {
       width: 100%;
+      height: var(--header-footer-height);
   }
   .header-menu.showed {
       left: 0;

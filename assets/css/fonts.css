@@ -4,3 +4,17 @@
     font-weight: 400;
     font-style: normal;
 }
+
+@font-face {
+    font-family: 'Oswald';
+    src: local('Oswald Light'), local('../fonts/Oswald-Light'), url('../fonts/Oswaldlight.woff2') format('woff2'), url('../fonts/Oswaldlight.woff') format('woff'), url('../fonts/Oswaldlight.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Oswald';
+    src: local('Oswald ExtraLightItalic'), local('../fonts/Oswald-ExtraLightItalic'), url('../fonts/Oswaldextralightitalic.woff2') format('woff2'), url('../fonts/Oswaldextralightitalic.woff') format('woff'), url('../fonts/Oswaldextralightitalic.ttf') format('truetype');
+    font-weight: 200;
+    font-style: italic;
+}

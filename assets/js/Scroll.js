@@ -5,6 +5,8 @@ const section2 = document.querySelector(".about_olimpiad");
 const section3 = document.querySelector(".stages");
 const section4 = document.querySelector(".schedule");
 
+const nav_btns = document.getElementsByClassName("nav-button");
+
 const sections = [section1, section2, section3, section4]
 
 const SCROLL_DELAY = 500;
@@ -23,8 +25,10 @@ function ChangeClass(el, lastStyle, curStyle) {
 function ChangeSection(section) {
     for (let i = 0; i < 4; i++) {
         ChangeClass(sections[i], "ShowItem", "HideItem");
+        ChangeClass(nav_btns[i], "select_btn", "none_select_btn");
     }
     ChangeClass(sections[section], "HideItem", "ShowItem");
+    ChangeClass(nav_btns[section], "none_select_btn", "select_btn");
 }
 
 function updateFrame(section) {
@@ -88,3 +92,10 @@ document.addEventListener("touchend", function (event) {
 
     setTimeout(() => isCanScroll = true, SCROLL_DELAY);
 });
+
+
+for (let i = 0; i < 4; i++) {
+    nav_btns[i].onclick = function(e) {
+        updateFrame(i);
+    }
+}

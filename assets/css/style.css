@@ -446,7 +446,6 @@ section {
 @media (max-width: 900px) {
   section {
     width: 100%;
-    display: none;
     flex-direction: column;
     justify-content: center;
     text-align: center;

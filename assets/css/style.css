@@ -328,16 +328,16 @@ section {
   text-align: start;
 }
 .about-table_item::before {
-  display: block;
+  display: inline-block;
   content: '';
   background: url(../img/Star.svg) center center;
   background-size: cover;
   background-repeat: no-repeat;
-  position: absolute;
-  left: 0;
   width: 1em;
   height: 1em;
-  transform: translate(20, -50%);
+  top: 50%;
+  transform: translateY(20%);
+  margin-right: 5px;
 }
 
 .junior_label {
@@ -381,7 +381,19 @@ section {
 .stages-menu-no_selected {
   text-decoration: none;
   background-color: none;
-
+}
+.stages-menu-selected::before {
+  display: inline-block;
+  content: '';
+  background: url(../img/Star.svg) center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  top: 50%;
+  transform: translateY(20%);
+  margin-right: 5px;
+  padding-top: 2%;
+  width: 1em;
+  height: 1em;
 }
 
 /*Section 3*/
@@ -409,6 +421,32 @@ section {
 /*Section 4*/
 
 /*Animations*/
+.background_img_show {
+  animation: background_img_show_anim 1.5s forwards;
+}
+.background_img_hide {
+  animation: background_img_hide_anim 1.5s forwards;
+}
+
+@keyframes background_img_hide_anim {
+  from {
+      opacity: 1;
+  }
+  to {
+    opacity: 0.1;
+}
+}
+
+@keyframes background_img_show_anim {
+  from {
+    opacity: 0.1;
+}
+  to {
+   opacity: 1;
+  }
+}
+
+
 .HideItem {
   animation: hideItem_anim 1.5s forwards;
 }

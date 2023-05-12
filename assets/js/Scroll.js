@@ -1,9 +1,10 @@
 const body = document.querySelector("body");
+const background_img = document.querySelector(".main_page_img");
 
 //Кнопки и секции (общие на странице)
 const sectionsStyles = ["ShowItem", "HideItem"];
 const sections = 
-    [ document.querySelector(".main_page"), 
+    [ document.querySelector(".main_page_text"), 
       document.querySelector(".about_olimpiad"), 
       document.querySelector(".stages"),  
       document.querySelector(".schedule")
@@ -51,6 +52,8 @@ function updateFrame(section) {
     else {
         ChangeClass(body, "yellow-background", "green-background");
     }
+    if (section == 0) ChangeClass(background_img, "background_img_hide", "background_img_show");
+    else ChangeClass(background_img, "background_img_show", "background_img_hide");
     ChangeSection(section, sections, nav_btns, nav_btnsStyles, sectionsStyles);
 
 }

@@ -199,21 +199,42 @@ footer {
 .footer-menu-element::before {
   content: '';
   position: absolute;
+  z-index: 3;
+  top: 0;
+  left: 0;
+  opacity: 0;
   transition-duration: .3s;
   width: 100%;
   height: 100%;
   display: block;
 }
 
+.footer-menu.inverted .footer-menu-element img {
+  opacity: 0;
+}
+
+.footer-menu.inverted .footer-menu-element::before {
+  opacity: 1;
+}
+
 .bsuir::before {
-  background: url("../img/") center center;
+  background: url("../img/bsuir_light.svg") center center;
+  background-repeat: no-repeat;
+  background-size: contain;
 }
+
 .fksis::before {
-  background: url("../img/") center center;
+  background: url("../img/miniFksis_light.svg") center center;
+  background-repeat: no-repeat;
+  background-size: contain;
 }
+
 .vk::before {
-  background: url("../img/") center center;
+  background: url("../img/vk_light.svg") center center;
+  background-repeat: no-repeat;
+  background-size: contain;
 }
+
 /*Footer*/
 
 main .container {
@@ -448,10 +469,10 @@ section {
 
 
 .HideItem {
-  animation: hideItem_anim 1.5s forwards;
+  animation: hideItem_anim 2.5s forwards;
 }
 .ShowItem {
-  animation: showItem_anim 1.5s forwards;
+  animation: showItem_anim 2.5s forwards;
 }
 
 @keyframes hideItem_anim {

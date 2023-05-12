@@ -1,6 +1,6 @@
 const body = document.querySelector("body");
 const background_img = document.querySelector(".main_page_img");
-
+const footer = document.querySelector(".footer-menu");
 //Кнопки и секции (общие на странице)
 const sectionsStyles = ["ShowItem", "HideItem"];
 const sections = 
@@ -48,9 +48,11 @@ function ChangeSection(section, sections, btns, buttonsStyles, sectionStyles) {
 function updateFrame(section) {
     if (section == 0 || section == 3) {
         ChangeClass(body, "green-background", "yellow-background");
+        footer.classList.remove("inverted");
     }
     else {
         ChangeClass(body, "yellow-background", "green-background");
+        footer.classList.add("inverted");
     }
     if (section == 0) ChangeClass(background_img, "background_img_hide", "background_img_show");
     else ChangeClass(background_img, "background_img_show", "background_img_hide");
